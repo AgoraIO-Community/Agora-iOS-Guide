@@ -16,6 +16,7 @@ After reading each chapter, you can check out branch `chapter-X-project` (replac
 
 ## Chapters
 1. [Basic setup](1-basic-set-up/README.md)
+2. [Obtain RTC tokens from a local token server](2-setup-token-server/README.md)
 
 ---
 
