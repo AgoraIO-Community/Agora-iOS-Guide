@@ -7,25 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11B3E7AD2BD2C1C200E36369 /* VideoCallCollectionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3E7AC2BD2C1C200E36369 /* VideoCallCollectionItemCell.swift */; };
-		11B3E7AF2BD2C1D400E36369 /* VideoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3E7AE2BD2C1D400E36369 /* VideoCollectionViewController.swift */; };
+		117F0E932BD6B66000DAC890 /* VideoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117F0E912BD6B65F00DAC890 /* VideoCollectionViewController.swift */; };
+		117F0E942BD6B66000DAC890 /* VideoCallCollectionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117F0E922BD6B65F00DAC890 /* VideoCallCollectionItemCell.swift */; };
+		11B3D75C2BCEC28A003D18DF /* AgoraTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3D75B2BCEC28A003D18DF /* AgoraTokenService.swift */; };
+		11B3D75E2BCED171003D18DF /* JoinChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3D75D2BCED171003D18DF /* JoinChannelViewController.swift */; };
 		11FACFAE2BC6A7BF0097B594 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACFAD2BC6A7BF0097B594 /* AppDelegate.swift */; };
 		11FACFB02BC6A7BF0097B594 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACFAF2BC6A7BF0097B594 /* SceneDelegate.swift */; };
 		11FACFB22BC6A7BF0097B594 /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACFB12BC6A7BF0097B594 /* VideoCallViewController.swift */; };
-		11FACFB52BC6A7BF0097B594 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 11FACFB42BC6A7BF0097B594 /* Base */; };
 		11FACFB72BC6A7C00097B594 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11FACFB62BC6A7C00097B594 /* Assets.xcassets */; };
 		11FACFBA2BC6A7C00097B594 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 11FACFB92BC6A7C00097B594 /* Base */; };
 		11FACFC32BC6C4590097B594 /* RtcBasic in Frameworks */ = {isa = PBXBuildFile; productRef = 11FACFC22BC6C4590097B594 /* RtcBasic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		11B3E7AC2BD2C1C200E36369 /* VideoCallCollectionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallCollectionItemCell.swift; sourceTree = "<group>"; };
-		11B3E7AE2BD2C1D400E36369 /* VideoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewController.swift; sourceTree = "<group>"; };
+		117F0E912BD6B65F00DAC890 /* VideoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewController.swift; sourceTree = "<group>"; };
+		117F0E922BD6B65F00DAC890 /* VideoCallCollectionItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCallCollectionItemCell.swift; sourceTree = "<group>"; };
+		11B3D75B2BCEC28A003D18DF /* AgoraTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgoraTokenService.swift; sourceTree = "<group>"; };
+		11B3D75D2BCED171003D18DF /* JoinChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinChannelViewController.swift; sourceTree = "<group>"; };
 		11FACFAA2BC6A7BF0097B594 /* Awesome Video Call.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Awesome Video Call.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FACFAD2BC6A7BF0097B594 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11FACFAF2BC6A7BF0097B594 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		11FACFB12BC6A7BF0097B594 /* VideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
-		11FACFB42BC6A7BF0097B594 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11FACFB62BC6A7C00097B594 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11FACFB92BC6A7C00097B594 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11FACFBB2BC6A7C00097B594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,7 +69,11 @@
 				11FACFB12BC6A7BF0097B594 /* VideoCallViewController.swift */,
 				11B3E7AE2BD2C1D400E36369 /* VideoCollectionViewController.swift */,
 				11B3E7AC2BD2C1C200E36369 /* VideoCallCollectionItemCell.swift */,
-				11FACFB32BC6A7BF0097B594 /* Main.storyboard */,
+				11B3D75D2BCED171003D18DF /* JoinChannelViewController.swift */,
+				11FACFB12BC6A7BF0097B594 /* VideoCallViewController.swift */,
+				117F0E922BD6B65F00DAC890 /* VideoCallCollectionItemCell.swift */,
+				117F0E912BD6B65F00DAC890 /* VideoCollectionViewController.swift */,
+				11B3D75B2BCEC28A003D18DF /* AgoraTokenService.swift */,
 				11FACFB62BC6A7C00097B594 /* Assets.xcassets */,
 				11FACFB82BC6A7C00097B594 /* LaunchScreen.storyboard */,
 				11FACFBB2BC6A7C00097B594 /* Info.plist */,
@@ -141,7 +147,6 @@
 			files = (
 				11FACFB72BC6A7C00097B594 /* Assets.xcassets in Resources */,
 				11FACFBA2BC6A7C00097B594 /* Base in Resources */,
-				11FACFB52BC6A7BF0097B594 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,25 +157,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				117F0E932BD6B66000DAC890 /* VideoCollectionViewController.swift in Sources */,
 				11FACFB22BC6A7BF0097B594 /* VideoCallViewController.swift in Sources */,
 				11FACFAE2BC6A7BF0097B594 /* AppDelegate.swift in Sources */,
-				11B3E7AD2BD2C1C200E36369 /* VideoCallCollectionItemCell.swift in Sources */,
+				11B3D75E2BCED171003D18DF /* JoinChannelViewController.swift in Sources */,
+				11B3D75C2BCEC28A003D18DF /* AgoraTokenService.swift in Sources */,
 				11FACFB02BC6A7BF0097B594 /* SceneDelegate.swift in Sources */,
-				11B3E7AF2BD2C1D400E36369 /* VideoCollectionViewController.swift in Sources */,
+				117F0E942BD6B66000DAC890 /* VideoCallCollectionItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		11FACFB32BC6A7BF0097B594 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				11FACFB42BC6A7BF0097B594 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		11FACFB82BC6A7C00097B594 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -308,12 +307,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = G6TTA6H999;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Awesome Video Call/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -337,12 +335,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = G6TTA6H999;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Awesome Video Call/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;

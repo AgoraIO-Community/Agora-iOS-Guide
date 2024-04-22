@@ -9,9 +9,22 @@ import UIKit
 final class VideoCallViewController: UIViewController {
 
     private var agoraKit: AgoraRtcEngineKit!
+    private let token: String
+    private let channel: String
     private var collectionViewController: VideoCollectionViewController!
     private let localView = UIView()
     private var collectionView: UIView!
+    
+    init(token: String, channel: String) {
+        self.token = token
+        self.channel = channel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,8 +82,8 @@ private extension VideoCallViewController {
         // Use a temporary token to join the channel
         // Pass in your project's token and channel name here.
         agoraKit.joinChannel(
-            byToken: "<#Your Token#>",
-            channelId: "<#Your Channel ID#>",
+            byToken: token,
+            channelId: channel,
             uid: 0,
             mediaOptions: option
         )
