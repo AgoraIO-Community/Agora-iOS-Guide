@@ -13,6 +13,7 @@ final class VideoCallViewController: UIViewController {
     private let channel: String
     private var collectionViewController: VideoCollectionViewController!
     private let localView = UIView()
+    private let localPauseView = UIVisualEffectView()
     private var collectionView: UIView!
     
     init(token: String, channel: String) {
@@ -48,6 +49,10 @@ final class VideoCallViewController: UIViewController {
         // Add local and remote views to the screen
         setupVideoViews()
         setupLocalVideo()
+        setupVideoPauseView()
+        
+        // Add control buttons
+        setupControlButtons()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -89,6 +94,23 @@ private extension VideoCallViewController {
         )
     }
     
+    func leaveChannel() {
+        agoraKit?.stopPreview()
+        agoraKit?.leaveChannel()
+        AgoraRtcEngineKit.destroy()
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func toggleLocalAudioStreamMute(_ isMuted: Bool) {
+        agoraKit.muteLocalAudioStream(isMuted)
+    }
+    
+    func toggleLocalVideoStreamPause(_ isPaused: Bool) {
+        agoraKit.muteLocalVideoStream(isPaused)
+        agoraKit.enableLocalVideo(!isPaused)
+        localPauseView.isHidden = !isPaused
+    }
+    
     func setupVideoViews() {
         
         view.addSubview(localView)
@@ -115,6 +137,48 @@ private extension VideoCallViewController {
         NSLayoutConstraint.activate(remoteViewConstraints + localViewConstraints)
     }
     
+    func setupVideoPauseView() {
+        [localPauseView].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.effect = UIBlurEffect(style: .light)
+            $0.isHidden = true
+        }
+        
+        view.addSubview(localPauseView)
+        
+        let localPauseIcon = UIImageView(image: UIImage(systemName: "pause.fill"))
+        localPauseIcon.translatesAutoresizingMaskIntoConstraints = false
+        localPauseIcon.tintColor = .white
+        localPauseView.contentView.addSubview(localPauseIcon)
+        
+        let localPauseViewConstraints = [
+            localPauseIcon.widthAnchor.constraint(equalToConstant: 20),
+            localPauseIcon.heightAnchor.constraint(equalToConstant: 20),
+            localPauseIcon.centerXAnchor.constraint(equalTo: localPauseView.centerXAnchor),
+            localPauseIcon.centerYAnchor.constraint(equalTo: localPauseView.centerYAnchor),
+            localPauseView.leadingAnchor.constraint(equalTo: localView.leadingAnchor),
+            localPauseView.topAnchor.constraint(equalTo: localView.topAnchor),
+            localView.trailingAnchor.constraint(equalTo: localPauseView.trailingAnchor),
+            localView.bottomAnchor.constraint(equalTo: localPauseView.bottomAnchor)
+        ]
+        
+        NSLayoutConstraint.activate(localPauseViewConstraints)
+    }
+    
+    func setupControlButtons() {
+        
+        let controlButtons = VideoCallControlButtonsView()
+        controlButtons.delegate = self
+        controlButtons.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(controlButtons)
+        
+        NSLayoutConstraint.activate([
+            view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: controlButtons.bottomAnchor, constant: 32),
+            controlButtons.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+    }
+    
     func setupLocalVideo() {
         // Enable video module
         agoraKit.enableVideo()
@@ -126,5 +190,19 @@ private extension VideoCallViewController {
         videoCanvas.view = localView
         // Set local view
         agoraKit.setupLocalVideo(videoCanvas)
+    }
+}
+
+extension VideoCallViewController: VideoCallControlButtonsViewDelegate {
+    
+    func didTapButton(type: VideoCallControlButtonsView.ButtonType, isSelected: Bool) {
+        switch type {
+        case .mute:
+            toggleLocalAudioStreamMute(isSelected)
+        case .leave:
+            leaveChannel()
+        case .cameraOff:
+            toggleLocalVideoStreamPause(isSelected)
+        }
     }
 }

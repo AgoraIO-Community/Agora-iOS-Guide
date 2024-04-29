@@ -11,6 +11,7 @@
 		117F0E942BD6B66000DAC890 /* VideoCallCollectionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117F0E922BD6B65F00DAC890 /* VideoCallCollectionItemCell.swift */; };
 		11B3D75C2BCEC28A003D18DF /* AgoraTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3D75B2BCEC28A003D18DF /* AgoraTokenService.swift */; };
 		11B3D75E2BCED171003D18DF /* JoinChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3D75D2BCED171003D18DF /* JoinChannelViewController.swift */; };
+		11B47BE02BDA8F9B009DB028 /* VideoCallControlButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B47BDF2BDA8F9B009DB028 /* VideoCallControlButtonsView.swift */; };
 		11FACFAE2BC6A7BF0097B594 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACFAD2BC6A7BF0097B594 /* AppDelegate.swift */; };
 		11FACFB02BC6A7BF0097B594 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACFAF2BC6A7BF0097B594 /* SceneDelegate.swift */; };
 		11FACFB22BC6A7BF0097B594 /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACFB12BC6A7BF0097B594 /* VideoCallViewController.swift */; };
@@ -24,6 +25,7 @@
 		117F0E922BD6B65F00DAC890 /* VideoCallCollectionItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCallCollectionItemCell.swift; sourceTree = "<group>"; };
 		11B3D75B2BCEC28A003D18DF /* AgoraTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgoraTokenService.swift; sourceTree = "<group>"; };
 		11B3D75D2BCED171003D18DF /* JoinChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinChannelViewController.swift; sourceTree = "<group>"; };
+		11B47BDF2BDA8F9B009DB028 /* VideoCallControlButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallControlButtonsView.swift; sourceTree = "<group>"; };
 		11FACFAA2BC6A7BF0097B594 /* Awesome Video Call.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Awesome Video Call.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FACFAD2BC6A7BF0097B594 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11FACFAF2BC6A7BF0097B594 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				11B3E7AC2BD2C1C200E36369 /* VideoCallCollectionItemCell.swift */,
 				11B3D75D2BCED171003D18DF /* JoinChannelViewController.swift */,
 				11FACFB12BC6A7BF0097B594 /* VideoCallViewController.swift */,
+				11B47BDF2BDA8F9B009DB028 /* VideoCallControlButtonsView.swift */,
 				117F0E922BD6B65F00DAC890 /* VideoCallCollectionItemCell.swift */,
 				117F0E912BD6B65F00DAC890 /* VideoCollectionViewController.swift */,
 				11B3D75B2BCEC28A003D18DF /* AgoraTokenService.swift */,
@@ -163,6 +166,7 @@
 				11B3D75E2BCED171003D18DF /* JoinChannelViewController.swift in Sources */,
 				11B3D75C2BCEC28A003D18DF /* AgoraTokenService.swift in Sources */,
 				11FACFB02BC6A7BF0097B594 /* SceneDelegate.swift in Sources */,
+				11B47BE02BDA8F9B009DB028 /* VideoCallControlButtonsView.swift in Sources */,
 				117F0E942BD6B66000DAC890 /* VideoCallCollectionItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
