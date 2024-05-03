@@ -39,6 +39,16 @@ func toggleLocalVideoStreamPause(_ isPaused: Bool) {
 }
 ```
 
+### Switch camera
+
+On iOS devices, the Agora engine can help you switch between the front and back cameras effortlessly:
+
+```Swift
+func switchCamera() {
+    agoraKit.switchCamera()
+}
+```
+
 ## Building the UI
 
 As shown in the image on top of this chapter, we have three buttons at the bottom of the screen to allow users to leave, mute, or pause. For the mute and pause buttons, we can use the `isSelected` state to highlight whether mute/pause is currently active. 
@@ -86,7 +96,11 @@ final class VideoCallViewController: UIViewController {
 
 </details>
 
+---
+
 At this point, you can come up with your own button implementation. Or simply use the sample code in the completed project. Our sample code includes a separate view class so we don't have to configure every button inside our view controller. Check out branch `chapter-3-project` and take a look at `VideoCallControlButtonsView`.
+
+For the camera switch button, we would like to place it at the bottom left corner of our local video view. When you add this subview, make sure it's placed above the local vide view, and below the blur view. Check the sample project if you want to see how it's implemented.
 
 ## Testing if your sample app is working as expected
 
