@@ -13,6 +13,7 @@ final class VideoCallViewController: UIViewController {
     private let channel: String
     private var collectionViewController: VideoCollectionViewController!
     private let localView = UIView()
+    private let switchCameraButton = UIButton()
     private let localPauseView = UIVisualEffectView()
     private var collectionView: UIView!
     
@@ -49,6 +50,7 @@ final class VideoCallViewController: UIViewController {
         // Add local and remote views to the screen
         setupVideoViews()
         setupLocalVideo()
+        setupSwitchCameraButton()
         setupVideoPauseView()
         
         // Add control buttons
@@ -111,6 +113,10 @@ private extension VideoCallViewController {
         localPauseView.isHidden = !isPaused
     }
     
+    func switchCamera() {
+        agoraKit.switchCamera()
+    }
+    
     func setupVideoViews() {
         
         view.addSubview(localView)
@@ -135,6 +141,33 @@ private extension VideoCallViewController {
         ]
         
         NSLayoutConstraint.activate(remoteViewConstraints + localViewConstraints)
+    }
+    
+    func setupSwitchCameraButton() {
+        switchCameraButton.translatesAutoresizingMaskIntoConstraints = false
+        switchCameraButton.setImage(UIImage(systemName: "arrow.triangle.2.circlepath.camera.fill"), for: .normal)
+        
+        let colorConfig = UIImage.SymbolConfiguration(paletteColors: [.white])
+        let sizeConfig = UIImage.SymbolConfiguration(pointSize: 15)
+        let config = colorConfig.applying(sizeConfig)
+        switchCameraButton.setPreferredSymbolConfiguration(config, forImageIn: .normal)
+        switchCameraButton.setBackgroundImage(
+            UIImage(systemName: "circle.fill")?.applyingSymbolConfiguration(.init(hierarchicalColor: .gray)),
+            for: .normal
+        )
+        
+        view.addSubview(switchCameraButton)
+        
+        let constraints = [
+            switchCameraButton.widthAnchor.constraint(equalToConstant: 32),
+            switchCameraButton.heightAnchor.constraint(equalToConstant: 32),
+            switchCameraButton.leadingAnchor.constraint(equalTo: localView.leadingAnchor, constant: 4),
+            localView.bottomAnchor.constraint(equalTo: switchCameraButton.bottomAnchor, constant: 4)
+        ]
+        
+        NSLayoutConstraint.activate(constraints)
+        
+        switchCameraButton.addTarget(self, action: #selector(switchCameraButtonTapped(_:)), for: .touchUpInside)
     }
     
     func setupVideoPauseView() {
@@ -190,6 +223,11 @@ private extension VideoCallViewController {
         videoCanvas.view = localView
         // Set local view
         agoraKit.setupLocalVideo(videoCanvas)
+    }
+    
+    @objc
+    func switchCameraButtonTapped(_ button: UIButton) {
+        switchCamera()
     }
 }
 
