@@ -130,9 +130,7 @@ final class AgoraTokenService {
 ## Building views that allow user inputs
 
 ### Changes to existing code
-Let's first refactor our existing `ViewController` to `VideoCallViewController`. You can do so by right-clicking the class name in the code editor and select `Refactor > Rename...`. 
-
-We also need to make sure this view controller has access to the channel name user entered, and the token obtained from our local token server. Let's add two private properties in `VideoCallViewController` and an initializer that sets the properties:
+Let's navigate to `VideoCallViewController.swift`. We need to make sure this view controller has access to the channel name user entered, and the token obtained from our local token server. Let's add two private properties and an initializer that sets the properties:
 
 ```Swift
 final class VideoCallViewController: UIViewController {
