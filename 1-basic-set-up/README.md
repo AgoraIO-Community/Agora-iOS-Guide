@@ -49,7 +49,7 @@ After fetching the remote git repository, Xcode shows a list of package products
 
 ## Implement Video Call Views and Agora RTC
 
-Navigate to `ViewController.swift`. We'll demonstrate how to initalize Agora RTC engine, add individual subviews, join/leave a channel and display both local and remote video feeds. Firstly, make sure you import the SDK properly at top of the file:
+Navigate to `ViewController.swift` and refactor it to `VideoCallViewController`. We'll demonstrate how to initalize Agora RTC engine, add individual subviews, join/leave a channel and display both local and remote video feeds. Firstly, make sure you import the SDK properly at top of the file:
 
 ```Swift
 import AgoraRtcKit
@@ -60,7 +60,7 @@ import AgoraRtcKit
 During the entire lifecycle of our view controller, we need a reference to the shared `AgoraRtcEngineKit` object. Let's declare the stored property at top of our view controller code and initialize it in `viewDidLoad(_:)`
 
 ```Swift
-class ViewController: UIViewController {
+class VideoCallViewController: UIViewController {
     private var agoraKit: AgoraRtcEngineKit!
 
     override func viewDidLoad() {
@@ -84,7 +84,7 @@ In order to display the video feeds (both local and remote), we need two subview
 We will create a spearate subclass of `UICollectionViewController` so we can handle collection view-related logic in that separate file. Let's call it `VideoCollectionViewController`.
 
 ```Swift
-class ViewController: UIViewController {
+class VideoCallViewController: UIViewController {
     // ...
     private var collectionViewController: VideoCollectionViewController!
     private let localView = UIView()
@@ -181,7 +181,7 @@ We need to implement `AgoraRtcEngineDelegate` so we can perform actions when cer
 In this chapter, we will be primarily implementing two delegate methods:
 
 ```Swift
-extension ViewController: AgoraRtcEngineDelegate {
+extension VideoCallViewController: AgoraRtcEngineDelegate {
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
         // Occurs when a remote user or user joins the channel.
